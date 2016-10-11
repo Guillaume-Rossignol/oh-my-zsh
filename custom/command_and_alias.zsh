@@ -19,6 +19,6 @@ deploy_marketplace () {
     git fetch --all && git co origin/master && git merge --no-ff origin/stage -m 'Merge stage into master' && git push origin HEAD:master HEAD:stage && git tag $1 && git push origin $1
 }
 git_create_branche_from_origin_master () {
-    git fetch --all && git checkout -B $1 origin/master
+    git fetch origin && git checkout -B $1 origin/master
 }
 
