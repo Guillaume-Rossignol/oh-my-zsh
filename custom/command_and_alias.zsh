@@ -16,9 +16,9 @@ git_clean () {
     git branch --merged master | grep -v "\* master" | xargs -n 1 git branch -d
 }
 deploy_marketplace () {
-    git fetch --all && git co origin/master && git merge --no-ff origin/stage -m 'Merge stage into master' && git push origin HEAD:master HEAD:stage && git tag $1 && git push origin $1
+    git fetch origin && git co origin/master && git tag $1 && git push origin $1
 }
-git_create_branche_from_origin_master () {
+gcb_from_master () {
     git fetch origin && git checkout -B $1 origin/master
 }
 
