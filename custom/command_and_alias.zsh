@@ -1,6 +1,6 @@
 alias lc="wc -l"
 squash () {
-    git rebase -i --autosquash HEAD~$1
+    GIT_SEQUENCE_EDITOR=true bash -c "git rebase -i --autosquash HEAD~$1"
 }
 set_deploy_test_ip () {
     remove_test_ip
