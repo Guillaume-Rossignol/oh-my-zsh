@@ -1,4 +1,6 @@
 alias lc="wc -l"
+alias keepass="nohup mono ~/opt/KeePass-2.40/KeePass.exe&"
+alias pstorm="nohup phpstorm &"
 squash () {
     GIT_SEQUENCE_EDITOR=true bash -c "git rebase -i --autosquash HEAD~$1"
 }
