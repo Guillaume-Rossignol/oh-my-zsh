@@ -1,6 +1,9 @@
 alias lc="wc -l"
 alias keepass="nohup mono ~/opt/KeePass-2.40/KeePass.exe&"
 alias pstorm="nohup phpstorm &"
+taptempo() {
+	perl -ne 'BEGIN{use Time::HiRes qw/gettimeofday/} push(@t,0+gettimeofday()); shift(@t) if @t>5; printf("%3.0f bpm",60*(@t-1)/($t[-1]-$t[0])) if @t>1'
+}
 squash () {
     GIT_SEQUENCE_EDITOR=true bash -c "git rebase -i --autosquash HEAD~$1"
 }
