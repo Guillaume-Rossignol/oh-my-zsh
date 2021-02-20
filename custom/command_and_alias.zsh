@@ -1,6 +1,11 @@
 alias lc="wc -l"
 alias keepass="nohup mono ~/opt/KeePass-2.40/KeePass.exe&"
 alias pstorm="nohup phpstorm &"
+alias swagger-editor="docker pull swaggerapi/swagger-editor && docker run -d -p 8080:8080 swaggerapi/swagger-editor"
+alias composer='docker run --rm --interactive --tty \
+  --volume $PWD:/app \
+  --volume ${COMPOSER_HOME:-$HOME/.composer}:/tmp \
+  composer --ignore-platform-reqs '
 taptempo() {
 	perl -ne 'BEGIN{use Time::HiRes qw/gettimeofday/} push(@t,0+gettimeofday()); shift(@t) if @t>5; printf("%3.0f bpm",60*(@t-1)/($t[-1]-$t[0])) if @t>1'
 }
