@@ -64,3 +64,6 @@ gcb_from_dev () {
 meteo() {
 	curl wttr.in/${1:-"Lyon"};
 }
+met() {
+	curl "wttr.in/${1:-"Lyon"}?format=2";
+}
