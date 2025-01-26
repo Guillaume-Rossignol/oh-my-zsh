@@ -1,5 +1,4 @@
 alias lc="wc -l"
-alias keepass="nohup mono ~/opt/KeePass-2.40/KeePass.exe&"
 alias pstorm="nohup phpstorm &"
 alias swagger-editor="docker pull swaggerapi/swagger-editor && docker run -d -p 8080:8080 swaggerapi/swagger-editor"
 alias composer='docker run --rm --interactive --tty \
@@ -40,4 +39,11 @@ git_auto_fixup() {
 
 gcb_from_dev () {
     git fetch origin && git checkout -B $1 origin/develop
+}
+
+meteo() {
+	curl wttr.in/${1:-"Lyon"};
+}
+met() {
+	curl "wttr.in/${1:-"Lyon"}?format=2";
 }
