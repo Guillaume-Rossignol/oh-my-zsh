@@ -57,6 +57,11 @@ deploy_marketplace () {
 gcb_from_master () {
     git fetch origin && git checkout -B $1 origin/master
 }
+git_auto_fixup() {
+	SHA =$git rev-parse $1 \
+		&& git commit --fixup $SHA  \
+		&& git rebase -i --autosquash $SHA~ 
+}
 
 gcb_from_dev () {
     git fetch origin && git checkout -B $1 origin/develop
